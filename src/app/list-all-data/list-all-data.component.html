@@ -1,0 +1,40 @@
+
+   <!-- <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/addEmpleado']" style="top: 5px;">Agregar
+    Datos</button> -->
+    <button class="btn btn-rounded btn-danger mb-3" type="button" (click)="deleteAll();" style="top: 5px;">Eliminar Todo</button>
+
+   <table class="table table-bordered table-striped" style="text-align: center;" >
+
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Telefono</th>
+          <th>Estado</th>
+          <th>Compania</th>
+          <th>Eliminar</th>
+
+
+        </tr>
+<tr *ngFor="let empleados of Empleados">
+<td> <img  src="http://localhost:8071/editar.png"  class="img-thumbnail rounded" style="width:45px; cursor: pointer;" [routerLink]="['/Update']" [queryParams]="{'id':empleados.id}"></td>
+
+  <!-- <td> <button type="button" class="btn btn-rounded btn-primary"
+              [routerLink]="['/Update']" [queryParams]="{'id':empleados.id}">{{empleados.id}}</button></td> -->
+      <!-- <td>{{empleados.id}}</td> -->
+      <td>{{empleados.data.nombre}}</td>
+      <td>{{empleados.data.telefono}}</td>
+      <td>{{empleados.data.estado}}</td>
+      <td>{{empleados.data.compania}}</td>
+      <td> <input (click)="deleteEmpleado(empleados)"  type="image" src="http://localhost:8071/delete.png"  class="img-thumbnail rounded" style="width:45px; cursor: pointer;"></td>
+      <!-- <td> <button (click)="deleteEmpleado(empleados)" type="button" class="btn btn-rounded btn-primary">Eliminar</button></td> -->
+
+
+
+</tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+
